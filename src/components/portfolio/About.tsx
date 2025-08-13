@@ -1,4 +1,5 @@
 import { Code, Palette, Zap } from "lucide-react";
+import { portfolioConfig } from "@/config/portfolio";
 
 const About = () => {
   const features = [
@@ -27,8 +28,7 @@ const About = () => {
             About Me
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            I'm a passionate developer and designer with over 5 years of experience creating digital solutions. 
-            I love turning complex problems into simple, beautiful, and intuitive designs.
+            {portfolioConfig.about.introduction}
           </p>
         </div>
 
@@ -36,20 +36,9 @@ const About = () => {
           <div className="animate-slide-in-left">
             <h3 className="text-2xl font-semibold mb-6 text-primary">My Journey</h3>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                Started as a self-taught developer, I've grown into a full-stack engineer who bridges 
-                the gap between design and development. My background in both fields allows me to 
-                create cohesive, user-focused products.
-              </p>
-              <p>
-                I specialize in React, TypeScript, Node.js, and modern design tools. When I'm not 
-                coding, you'll find me exploring new technologies, contributing to open source, 
-                or mentoring aspiring developers.
-              </p>
-              <p>
-                I believe great software is not just functional, but also delightful to use. 
-                Every project is an opportunity to craft something meaningful and impactful.
-              </p>
+              {portfolioConfig.about.journey.map((paragraph, index) => (
+                <p key={index}>{paragraph}</p>
+              ))}
             </div>
           </div>
 

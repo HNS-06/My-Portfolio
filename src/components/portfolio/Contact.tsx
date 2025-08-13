@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { portfolioConfig } from "@/config/portfolio";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -34,19 +35,19 @@ const Contact = () => {
     {
       icon: <Mail className="w-5 h-5" />,
       title: "Email",
-      value: "alex.johnson@email.com",
-      href: "mailto:alex.johnson@email.com"
+      value: portfolioConfig.contact.email,
+      href: `mailto:${portfolioConfig.contact.email}`
     },
     {
       icon: <Phone className="w-5 h-5" />,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: portfolioConfig.contact.phone,
+      href: `tel:${portfolioConfig.contact.phone.replace(/\D/g, '')}`
     },
     {
       icon: <MapPin className="w-5 h-5" />,
       title: "Location",
-      value: "San Francisco, CA",
+      value: portfolioConfig.contact.location,
       href: "#"
     }
   ];

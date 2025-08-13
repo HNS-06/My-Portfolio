@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { portfolioConfig } from "@/config/portfolio";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -49,7 +50,7 @@ const Navigation = () => {
                 isScrolled ? 'text-primary' : 'text-white'
               } hover:scale-105`}
             >
-              Alex Johnson
+              {portfolioConfig.name}
             </button>
 
             {/* Desktop Navigation */}

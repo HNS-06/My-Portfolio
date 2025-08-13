@@ -1,33 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
+import { portfolioConfig } from "@/config/portfolio";
 
 const Projects = () => {
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      description: "A modern e-commerce solution built with React, Node.js, and Stripe integration. Features include real-time inventory, advanced search, and mobile-first design.",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "/api/placeholder/600/400",
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Task Management App",
-      description: "Collaborative task management tool with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      tech: ["Vue.js", "Firebase", "Tailwind CSS"],
-      image: "/api/placeholder/600/400",
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Portfolio Website",
-      description: "A stunning portfolio website with smooth animations, responsive design, and optimized performance. Built with modern web technologies.",
-      tech: ["React", "TypeScript", "Framer Motion"],
-      image: "/api/placeholder/600/400",
-      liveUrl: "#",
-      githubUrl: "#"
-    }
-  ];
+  const projects = portfolioConfig.projects;
 
   return (
     <section id="projects" className="section-padding bg-background">

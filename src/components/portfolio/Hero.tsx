@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { portfolioConfig } from "@/config/portfolio";
 
 const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -19,10 +20,10 @@ const Hero = () => {
       <div className="portfolio-container relative z-10 text-center text-white">
         <div className="animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Hi, I'm <span className="text-yellow-300">Alex Johnson</span>
+            Hi, I'm <span className="text-yellow-300">{portfolioConfig.name}</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
-            A passionate <span className="font-semibold text-yellow-200">Full-Stack Developer</span> and <span className="font-semibold text-yellow-200">UI/UX Designer</span> crafting beautiful digital experiences that users love.
+            {portfolioConfig.tagline}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -46,21 +47,25 @@ const Hero = () => {
 
           <div className="flex justify-center space-x-6">
             <a 
-              href="#" 
+              href={portfolioConfig.contact.github} 
               className="text-white/80 hover:text-white transition-smooth hover:scale-110 transform"
               aria-label="GitHub"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Github size={24} />
             </a>
             <a 
-              href="#" 
+              href={portfolioConfig.contact.linkedin} 
               className="text-white/80 hover:text-white transition-smooth hover:scale-110 transform"
               aria-label="LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               <Linkedin size={24} />
             </a>
             <a 
-              href="#" 
+              href={`mailto:${portfolioConfig.contact.email}`} 
               className="text-white/80 hover:text-white transition-smooth hover:scale-110 transform"
               aria-label="Email"
             >
